@@ -1,5 +1,5 @@
 {
-  "name": "pouchdb-plugin-seed",
+  "name": "pouchdb-oauth",
   "version": "0.0.1",
   "description": "OAuth authentication for PouchDB and CouchDB",
   "main": "index.js",
