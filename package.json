@@ -1,11 +1,11 @@
 {
   "name": "pouchdb-plugin-seed",
-  "version": "0.1.0",
-  "description": "PouchDB Plugin Seed project",
+  "version": "0.0.1",
+  "description": "OAuth authentication for PouchDB and CouchDB",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/pouchdb/plugin-seed.git"
+    "url": "git://github.com/jekill/pouchdb-oauth.git"
   },
   "keywords": [
     "pouch",
@@ -18,7 +18,7 @@
   "author": "",
   "license": "Apache",
   "bugs": {
-    "url": "https://github.com/pouchdb/plugin-seed/issues"
+    "url": "https://github.com/jekill/pouchdb-oauth/issues"
   },
   "scripts": {
     "test-node": "TEST_DB=testdb,http://localhost:5984/testdb istanbul test ./node_modules/mocha/bin/_mocha test/test.js",
