@@ -35,7 +35,9 @@
   "dependencies": {
     "lie": "^2.6.0",
     "inherits": "~2.0.1",
-    "argsarray": "0.0.1"
+    "argsarray": "0.0.1",
+    "oauth": "^0.9.12",
+    "pouchdb-extend":"~0.1.2"
   },
   "devDependencies": {
     "bluebird": "^1.0.7",
@@ -50,12 +52,20 @@
     "mkdirp": "^0.5.0",
     "mocha": "~1.18",
     "phantomjs": "^1.9.7-5",
-    "pouchdb": "pouchdb/pouchdb",
+    "pouchdb": "git+https://github.com/pouchdb/pouchdb",
     "request": "^2.36.0",
     "sauce-connect-launcher": "^0.4.2",
     "selenium-standalone": "^3.0.2",
     "uglify-js": "^2.4.13",
     "watchify": "^3.1.0",
     "wd": "^0.2.21"
-  }
+  },
+  "gitHead": "899830b3e453568bd99ff0fc5038153d6089bda1",
+  "readme": "PouchDB Plugin Seed\n=====\n\n[![Build Status](https://travis-ci.org/pouchdb/plugin-seed.svg)](https://travis-ci.org/pouchdb/plugin-seed)\n\nFork this project to build your first PouchDB plugin.  It contains everything you need to test in Node, WebSQL, and IndexedDB.  It also includes a Travis config file so you\ncan automatically run the tests in Travis.\n\nBuilding\n----\n    npm install\n    npm run build\n\nYour plugin is now located at `dist/pouchdb.mypluginname.js` and `dist/pouchdb.mypluginname.min.js` and is ready for distribution.\n\nGetting Started\n-------\n\n**First**, change the `name` in `package.json` to whatever you want to call your plugin.  Change the `build` script so that it writes to the desired filename (e.g. `pouchdb.mypluginname.js`).  Also, change the authors, description, git repo, etc.\n\n**Next**, modify the `index.js` to do whatever you want your plugin to do.  Right now it just adds a `pouch.sayHello()` function that says hello:\n\n```js\nexports.sayHello = utils.toPromise(function (callback) {\n  callback(null, 'hello');\n});\n```\n\n**Optionally**, you can add some tests in `tests/test.js`. These tests will be run both in the local database and a remote CouchDB, which is expected to be running at localhost:5984 in \"Admin party\" mode.\n\nThe sample test is:\n\n```js\n\nit('should say hello', function () {\n  return db.sayHello().then(function (response) {\n    response.should.equal('hello');\n  });\n});\n```\n\nTesting\n----\n\n### In Node\n\nThis will run the tests in Node using LevelDB:\n\n    npm test\n    \nYou can also check for 100% code coverage using:\n\n    npm run coverage\n\nIf you don't like the coverage results, change the values from 100 to something else in `package.json`, or add `/*istanbul ignore */` comments.\n\n\nIf you have mocha installed globally you can run single test with:\n```\nTEST_DB=local mocha --reporter spec --grep search_phrase\n```\n\nThe `TEST_DB` environment variable specifies the database that PouchDB should use (see `package.json`).\n\n### In the browser\n\nRun `npm run dev` and then point your favorite browser to [http://127.0.0.1:8001/test/index.html](http://127.0.0.1:8001/test/index.html).\n\nThe query param `?grep=mysearch` will search for tests matching `mysearch`.\n\n### Automated browser tests\n\nYou can run e.g.\n\n    CLIENT=selenium:firefox npm test\n    CLIENT=selenium:phantomjs npm test\n\nThis will run the tests automatically and the process will exit with a 0 or a 1 when it's done. Firefox uses IndexedDB, and PhantomJS uses WebSQL.\n\nWhat to tell your users\n--------\n\nBelow is some boilerplate you can use for when you want a real README for your users.\n\nTo use this plugin, include it after `pouchdb.js` in your HTML page:\n\n```html\n<script src=\"pouchdb.js\"></script>\n<script src=\"pouchdb.mypluginname.js\"></script>\n```\n\nOr to use it in Node.js, just npm install it:\n\n```\nnpm install pouchdb-myplugin\n```\n\nAnd then attach it to the `PouchDB` object:\n\n```js\nvar PouchDB = require('pouchdb');\nPouchDB.plugin(require('pouchdb-myplugin'));\n```\n",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/jekill/pouchdb-oauth",
+  "_id": "pouchdb-oauth@0.0.1",
+  "_shasum": "ba41a684dea6c63dba73fe1104dec0be3d2b4fb3",
+  "_from": "git+https://github.com/jekill/pouchdb-oauth.git#master",
+  "_resolved": "git+https://github.com/jekill/pouchdb-oauth.git#899830b3e453568bd99ff0fc5038153d6089bda1"
 }
